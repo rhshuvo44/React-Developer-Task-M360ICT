@@ -5,6 +5,7 @@ import ProductPages from "./pages/ProductPages";
 import Navbar from "./components/layout/Navbar";
 import FooterComponent from "./components/layout/FooterComponent";
 import ProductDetails from "./components/ProductDetails";
+import EditProduct from "./components/EditProduct";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductPages />} />
           <Route path="/product/:id" element={<ProductDetails />} />
-          {/* <Route path="/edit-product/:id" element={<EditProduct />} /> */}
+          <Route path="/edit-product/:id" element={<EditProduct />} />
         </Routes>
       </Content>
       <FooterComponent />
