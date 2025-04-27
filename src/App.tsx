@@ -2,6 +2,8 @@ import { Layout } from "antd";
 import { Content, Header } from "antd/es/layout/layout";
 import { Route, Routes } from "react-router-dom";
 import ProductPages from "./pages/ProductPages";
+import Navbar from "./components/layout/Navbar";
+import FooterComponent from "./components/layout/FooterComponent";
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
           lineHeight: "40px",
         }}
       >
-        {/* <Navbar /> */}
+        <Navbar />
       </Header>
       <Content style={{ padding: "50px" }}>
         <Routes>
@@ -22,7 +24,7 @@ function App() {
           <Route path="/edit-product/:id" element={<EditProduct />} /> */}
         </Routes>
       </Content>
-      {/* <FooterComponent /> */}
+      <FooterComponent />
     </Layout>
   );
 }
