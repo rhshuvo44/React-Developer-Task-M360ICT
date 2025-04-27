@@ -21,7 +21,13 @@ export interface Product {
     }[];
 
 }
+export interface Category {
 
+    slug: string,
+    name: string,
+    url: string
+
+}
 
 export const baseApi = createApi({
     reducerPath: 'baseApi',
@@ -30,8 +36,11 @@ export const baseApi = createApi({
         getProducts: builder.query<{ products: Product[]; total: number }, { limit: number; skip: number }>({
             query: ({ limit, skip }) => ({ url: `products?limit=${limit}&skip=${skip}`, method: 'GET' }),
         }),
+        getProduct: builder.query<Product, number>({
+            query: (id) => ({ url: `products/${id}`, method: "GET" }),
+        }),
 
     }),
 })
 
-export const { useGetProductsQuery } = baseApi
+export const { useGetProductsQuery, useGetProductQuery, } = baseApi

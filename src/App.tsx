@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import ProductPages from "./pages/ProductPages";
 import Navbar from "./components/layout/Navbar";
 import FooterComponent from "./components/layout/FooterComponent";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
       <Content style={{ padding: "50px" }}>
         <Routes>
           <Route path="/" element={<ProductPages />} />
-          {/* <Route path="/product/:id" element={<ProductDetails />} />
-          <Route path="/edit-product/:id" element={<EditProduct />} /> */}
+          <Route path="/product/:id" element={<ProductDetails />} />
+          {/* <Route path="/edit-product/:id" element={<EditProduct />} /> */}
         </Routes>
       </Content>
       <FooterComponent />
