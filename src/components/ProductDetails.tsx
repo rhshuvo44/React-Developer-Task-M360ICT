@@ -49,7 +49,26 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      
+      <div className="mt-5">
+        <h2 className="font-bold">Reviews</h2>
+        {product.reviews.map((review) => (
+          <div key={review.rating} className="p-5 border-b border-gray-200">
+            <p className="font-bold">{review.comment}</p>
+            <p>{review.reviewerName}</p>
+            <p>
+              Rating:{" "}
+              <span className="flex items-center gap-1">
+                {Array.from({ length: review.rating }, (_, i) => (
+                  <span
+                    key={i}
+                    className="h-5 w-5 rounded-full bg-yellow-400"
+                  ></span>
+                ))}
+              </span>
+            </p>
+          </div>
+        ))}
+      </div>
     </Card>
   );
 };
