@@ -31,6 +31,7 @@ const EditProduct = () => {
       message.success("Product updated successfully");
     } catch (error) {
       message.error("Failed to update product");
+      console.log(error);
     }
   };
 
